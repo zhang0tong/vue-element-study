@@ -42,7 +42,7 @@ export default {
       this.$refs.loginFormRef.validate(async valid => {
         // eslint-disable-next-line no-useless-return
         if (!valid) return
-        var { data: result } = await this.$http.post('posttest01', this.loginForm)
+        var { data: result } = await this.$http.post('login', this.loginForm)
         if (result.meta.status !== 200) return this.$message.error('登陆失败')
         window.sessionStorage.setItem('token', result.data.token)
         this.$router.push('/home')
@@ -92,5 +92,9 @@ export default {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+}
+.btns {
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -6,7 +6,11 @@ import './assets/css/globe.css'
 import './assets/font/iconfont.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://d3cfc7d9-7a4c-4988-a126-d731e3ab7031.mock.pstmn.io/'
+axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
+axios.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
