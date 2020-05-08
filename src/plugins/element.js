@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import ZkTable from 'vue-table-with-tree-grid'
 import {
   Button,
   Form,
@@ -28,7 +29,8 @@ import {
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Cascader
 } from 'element-ui'
 
 Vue.use(Button)
@@ -58,5 +60,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
+Vue.use(ZkTable.name, ZkTable)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
