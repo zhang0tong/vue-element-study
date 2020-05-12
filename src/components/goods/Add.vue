@@ -197,7 +197,6 @@ export default {
           const newInfo = { attr_id: item.attr_id, attr_value: item.attr_vals }
           this.addForm.attrs.push(newInfo)
         })
-        console.log(this.addForm)
         this.$http.post('goods', this.addForm)
           .then(({ data: res }) => {
             if (res.meta.status !== 201) return this.$message({ type: 'error', message: '添加商品失败!' })
